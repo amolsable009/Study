@@ -1,0 +1,10 @@
+  public static Id getRecordTypeId(String objectName, String recordTypeName) {
+    	objectName = String.isBlank(objectName)? '' : objectName.toLowerCase();
+    	Id recordTypeId;
+    	if (OBJECT_MAP.containsKey(objectName)) {
+    		Map<String, Schema.RecordTypeInfo> recordTypeMap = OBJECT_MAP.get(objectName).getDescribe().getRecordTypeInfosByName();
+    		recordTypeId = recordTypeMap.containsKey(recordTypeName)? 
+    		               recordTypeMap.get(recordTypeName).getRecordTypeId() : null;
+    	}
+    	return recordTypeId;
+    }
