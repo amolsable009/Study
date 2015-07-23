@@ -1,3 +1,4 @@
+  //function to get the record type
   public static final Map<String, Schema.SObjectType> OBJECT_MAP = Schema.getGlobalDescribe();
   public static Id getRecordTypeId(String objectName, String recordTypeName) {
     	objectName = String.isBlank(objectName)? '' : objectName.toLowerCase();
